@@ -29,9 +29,6 @@ class Gravatar{
 	// Vratí pouze URL adresu a nikoliv celý HTML tag
 	private $g_img      = FALSE;
 
-	// Doplnkové vlastnosti HTML tagu
-	private $g_atts     = array();
-
 	// Chybová zpráva
 	private $error      = '';
 
