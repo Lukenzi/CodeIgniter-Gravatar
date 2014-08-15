@@ -1,36 +1,13 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
-/**
- * Třída pro zobrazení Gravataru
- * =====================================================================
- * Author:  Lukenzi
- * Kontakt: lukenzi@gmail.com
- * =====================================================================
- *
- * Základní použití, které zobrazí obrázek gravataru:
- *
- * $g = new Gravatar('user@email.com');
- * echo $g->GetImage();
- *
- * nebo použití s jiným nastavením, a které zobrazí pouze URL k obrázku:
- *
- * $g = new Gravatar();
- * $g->SetEmail('user@email.com');
- * $g->SetSize(500);
- * $g->SetType('wavatar');
- * $g->SetRating('pg');
- * echo $g->GetUrl();
- *
- * nebo použití s případným zobrazením chybové zprávy:
- *
- * $g = new Gravatar('user@email.com');
- * $g->SetType('404');
- * echo $g->GetUrl();
- * echo $g->GetError();
- *
- *
- * http://site.gravatar.com/site/implement
- * =====================================================================
- */
+
+/*
+* Gravatar třída pro CodeIgniter
+*
+* @author Lukenzi <lukenzi@gmail.com>
+* @package Codeigniter
+* @subpackage Gravatar
+*
+*/
 
 class Gravatar{
 
@@ -49,7 +26,7 @@ class Gravatar{
 	// Výchozí hodnocení obrázku gravataru (g, pg, r, x)
 	private $g_rating   = 'g';
 
-	// Vrací pouze URL adresu a nikoliv celý HTML tag
+	// Vratí pouze URL adresu a nikoliv celý HTML tag
 	private $g_img      = FALSE;
 
 	// Doplnkové vlastnosti HTML tagu
@@ -58,7 +35,11 @@ class Gravatar{
 	// Chybová zpráva
 	private $error      = '';
 
+
+
 	// -----------------------------------------------------------------
+
+
 
 	/** Inicializace třídy
 	 *
@@ -75,6 +56,8 @@ class Gravatar{
 		}
 	}
 
+
+
 	/** Nastavení emailové adresy
 	 *
 	 * @param string Emailová adresa
@@ -87,6 +70,8 @@ class Gravatar{
 				$this->error = 'Emailová adresa nební zadaná ve správném tvaru!';
 		}
 	}
+
+
 
 	/** Nastavení velikosti vráceného gravataru (max 2048px)
 	 *
@@ -102,6 +87,8 @@ class Gravatar{
 			$this->g_size = $size;
 		}
 	}
+
+
 
 	/** Nastavení typu výchozího gravataru pokud není nastaven obrázek
 	 *
@@ -120,6 +107,8 @@ class Gravatar{
 		}
 	}
 
+
+
 	/** Nastavení hodnocení nahraného obrázku
 	 *
 	 * @param string Hodnocení (g, pg, r, x)
@@ -137,6 +126,8 @@ class Gravatar{
 		}
 	}
 
+
+
 	/** Vrátí URL adresu ke gravataru
 	 *
 	 * @return string URL adresa k obrázku gravataru
@@ -149,6 +140,8 @@ class Gravatar{
 			return $result;
 		}
 	}
+
+
 
 	/** Vrátí kompletní HTML tag pro obrázek gravataru
 	 *
@@ -163,6 +156,8 @@ class Gravatar{
 		}
 	}
 
+
+
 	/** Vrátí případnou chybovou zprávu
 	 *
 	 * @return string Chybová zpráva
@@ -174,6 +169,7 @@ class Gravatar{
 			return '';
 		}
 	}
+
 
 
 	/** Kontrola správnosti emailové adresy
@@ -189,6 +185,7 @@ class Gravatar{
 
 
 
-}// End class
+}
 
-/** End of file Gravatar.php **/
+/* End of file Gravatar.php */
+/* Location: ./application/libraries/Gravatar.php */
