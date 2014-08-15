@@ -11,6 +11,8 @@
 
 class Gravatar{
 
+
+
 	// Emailová adresa uživatele
 	private $user_email = '';
 
@@ -48,7 +50,7 @@ class Gravatar{
 			if($this->_CheckEmail($email)){
 				$this->user_email = trim(strtolower($email));
 			}else{
-				$this->error = 'Emailová adresa nební zadaná ve správném tvaru!';
+				$this->error = 'Emailová adresa není zadaná ve správném tvaru!';
 			}
 		}
 	}
@@ -87,7 +89,7 @@ class Gravatar{
 
 
 
-	/** Nastavení typu výchozího gravataru pokud není nastaven obrázek
+	/** Nastavení typu výchozího gravataru pokud nemá uživatel nastaven obrázek
 	 *
 	 * @param string Typ výchozího gravataru (404, mm, identicon, monsterid, wavatar)
 	 * @return void
@@ -106,7 +108,7 @@ class Gravatar{
 
 
 
-	/** Nastavení hodnocení nahraného obrázku
+	/** Nastavení hodnocení uživatelem nahraného obrázku
 	 *
 	 * @param string Hodnocení (g, pg, r, x)
 	 * @return void
@@ -125,7 +127,7 @@ class Gravatar{
 
 
 
-	/** Vrátí URL adresu ke gravataru
+	/** Vrátí URL adresu k vygenerovanému gravataru
 	 *
 	 * @return string URL adresa k obrázku gravataru
 	 */
@@ -140,9 +142,9 @@ class Gravatar{
 
 
 
-	/** Vrátí kompletní HTML tag pro obrázek gravataru
+	/** Vrátí kompletní HTML tag pro obrázek gravataru (obsahuje CSS třídu "gravatar")
 	 *
-	 * @return string HTML tag obrázku gravataru
+	 * @return string HTML tag obrázku gravataru i s URL adresou
 	 */
 	public function GetImage(){
 		if(!empty($this->error)){
@@ -155,7 +157,7 @@ class Gravatar{
 
 
 
-	/** Vrátí případnou chybovou zprávu
+	/** Vrátí případnou chybovou zprávu, jinak prázdný string
 	 *
 	 * @return string Chybová zpráva
 	 */
@@ -172,7 +174,7 @@ class Gravatar{
 	/** Kontrola správnosti emailové adresy
 	 *
 	 * @param string Emailová adresa
-	 * @return bool
+	 * @return bool Zda je platná nebo ne
 	 */
 	private function _CheckEmail($email){
 		return preg_match('#^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$#i', $email);
