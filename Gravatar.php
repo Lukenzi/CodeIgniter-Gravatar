@@ -16,8 +16,8 @@ class Gravatar{
 	// Emailová adresa uživatele
 	private $user_email = '';
 
-	// URL adresa pro vygenerování gravataru
-	private $g_url      = 'http://www.gravatar.com/avatar/';
+	// Zabezpečená URL adresa pro vygenerování gravataru
+	private $g_url      = 'https://secure.gravatar.com/avatar/';
 
 	// Velikost gravataru v pixelech (max 2048)
 	private $g_size     = 80;
